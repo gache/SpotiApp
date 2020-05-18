@@ -13,6 +13,7 @@ export class HomeComponent implements OnInit {
   // j'injecte mon service au contructor pour y acceder à la petition get
   constructor(private httpService: SpotifyService) {
     this.httpService.getNewRelease()
+  // je mets subscribe à la petition get pour avoir l'information de l'Api.
     .subscribe((data: any) => {
       console.log(data.albums.items);
       this.newChanson = data.albums.items;
