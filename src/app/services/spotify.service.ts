@@ -23,6 +23,7 @@ export class SpotifyService {
     // ici je mets tous les header que l'Api a besoin
     Authorization: 'Bearer BQBD77ElDiVB0CEeGZqV9B1BuraiXj1gvGLlw9BYpEKHOOjdsD__mpXkAmqnRX0hOlKZnXTLucir_SRBaJM'
   });
+ 
     return this.http.get( URL, { headers} );
   }
 

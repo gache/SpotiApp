@@ -1,7 +1,8 @@
 <div class="card-columns ">
   <!-- Utilisation et affichage de la data  -->
     <div class="card" *ngFor="let chanson of newChanson">
-      <img [src]="chanson.images[0].url " class="card-img-top" alt="...">
+      <!-- Utilisation du pipes avec et sans images -->
+      <img [src]="chanson.images | nonImage " class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title" > {{chanson.name}} </h5>
         <p class="card-text">

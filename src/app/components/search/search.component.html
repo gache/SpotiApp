@@ -8,7 +8,8 @@
 <div class="card-columns m-5 ">
     <!-- Utilisation et affichage de la data  -->
       <div class="card" *ngFor="let artist of artistes">
-        <img [src]="artist.images[0].url " class="card-img-top" alt="...">
+         <!-- Utilisation du pipes avec et sans images -->  
+        <img [src]="artist.images | nonImage " class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title" > {{artist.name}} </h5>
         </div>
