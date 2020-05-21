@@ -1,0 +1,14 @@
+<div class="card-columns m-5 ">
+    <!-- Utilisation et affichage de la data  -->
+    <!-- chansons viens de mon input -->
+    <div class="card" *ngFor="let chanson of chansons">
+        <!-- Utilisation du pipes avec et sans images -->
+        <img [src]="chanson.images | nonImage " class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title"> {{chanson.name}} </h5>
+            <p class="card-text">
+                <span *ngFor="let artist of chanson.artists" class="badge badge-pill badge-primary"> {{ artist.name }} </span>
+            </p>
+        </div>
+    </div>
+</div>

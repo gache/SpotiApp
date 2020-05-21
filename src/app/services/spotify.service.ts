@@ -21,7 +21,7 @@ export class SpotifyService {
     // dans notre cas on ava uitiliser l'headers avec une autentification
     const headers = new HttpHeaders({
       // ici je mets tous les header que l'Api a besoin
-      Authorization: 'Bearer BQDqGPYYGglGgE0GfQHMfitIa4ecZ2PmpdxU7so9Fv1Qd5nqzT6SgJyNdIRzh7lkiHLEe4-ddpGqjJBG63Y'
+      Authorization: 'Bearer BQC20zvZD3ddcR6OCV1SjUGoBrQxTc-xb9muEazMcnhGaiX3UZY9zBJ2sLjtFUY9ZyOq7BipbDctMdmpFtc'
     });
     // ja fais fais al petition get j'envoie url et les headers
     return this.http.get(URL, { headers });

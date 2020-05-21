@@ -1,15 +1,1 @@
-<div class="card-columns ">
-  <!-- Utilisation et affichage de la data  -->
-    <div class="card" *ngFor="let chanson of newChanson">
-      <!-- Utilisation du pipes avec et sans images -->
-      <img [src]="chanson.images | nonImage " class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title" > {{chanson.name}} </h5>
-        <p class="card-text">
-          <span *ngFor="let artist of chanson.artists" class="badge badge-pill badge-primary">    {{ artist.name }} </span>
-     </p>
-      </div>
-    </div>
-</div>
-
-
+<app-cards [chansons]="newChanson"></app-cards>

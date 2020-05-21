@@ -14,6 +14,7 @@ import { HomeComponent } from './components/home/home.component';
 import { SearchComponent } from './components/search/search.component';
 import { ArtisteComponent } from './components/artiste/artiste.component';
 import { MenuComponent } from './components/shared/menu/menu.component';
+import { CardsComponent } from './components/cards/cards.component';
 
 // Pipes
 import { NonImagePipe } from './pipes/non-image.pipe';
@@ -27,6 +28,7 @@ import { NonImagePipe } from './pipes/non-image.pipe';
     ArtisteComponent,
     MenuComponent,
     NonImagePipe,
+    CardsComponent,
 
   ],
   imports: [

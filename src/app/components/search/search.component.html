@@ -1,18 +1,8 @@
 <div class="row">
     <div class="col">
-        <input  #terme type="text" (keyup)="recherche(terme.value)"    class="form-control" placeholder="Recherche Artist">
+        <input #terme type="text" (keyup)="recherche(terme.value)" class="form-control" placeholder="Recherche Artist">
     </div>
 </div>
 
 
-<div class="card-columns m-5 ">
-    <!-- Utilisation et affichage de la data  -->
-      <div class="card" *ngFor="let artist of artistes">
-         <!-- Utilisation du pipes avec et sans images -->  
-        <img [src]="artist.images | nonImage " class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title" > {{artist.name}} </h5>
-        </div>
-      </div>
-  </div>
-  
+<app-cards [chansons]="artistes"></app-cards>
