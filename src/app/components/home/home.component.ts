@@ -15,8 +15,8 @@ export class HomeComponent implements OnInit {
     this.httpService.getNewRelease()
   // je mets subscribe à la petition get pour avoir l'information de l'Api.
     .subscribe((data: any) => {
-      console.log(data.albums.items);
-      this.newChanson = data.albums.items;
+    console.log(data);
+    this.newChanson = data;
     });
     // On entend par subscribe de dire à angular, de se préparer car ça c'est une petition. et
     // à n'importe à quel moment quelqu'un va s'inscrire.
