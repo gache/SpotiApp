@@ -7,21 +7,26 @@ import { SpotifyService } from '../../services/spotify.service';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
+  // propriété
+  artistes: any[] = [];
+  loading: boolean;
 
-  artistes: any [] =[];
+  constructor(private spotiService: SpotifyService) {
 
-  constructor(private spotiService: SpotifyService) { }
+  }
 
   ngOnInit() {
   }
 
   // le parametre terme: c'est tous ce que la personne ecrit dans l'input de la recherche dans search.component.html
   recherche(terme: string) {
+    this.loading = true; // loading charge l'information
     this.spotiService.getArtist(terme)
-        .subscribe((data: any) => {
+      .subscribe((data: any) => {
         console.log(data);
         this.artistes = data;
-    });
+        this.loading = false; // loading a chargé l'information
+      });
 
   }
 }

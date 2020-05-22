@@ -18,6 +18,7 @@ import { CardsComponent } from './components/cards/cards.component';
 
 // Pipes
 import { NonImagePipe } from './pipes/non-image.pipe';
+import { LoadingComponent } from './components/shared/loading/loading.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { NonImagePipe } from './pipes/non-image.pipe';
     MenuComponent,
     NonImagePipe,
     CardsComponent,
+    LoadingComponent,
 
   ],
   imports: [

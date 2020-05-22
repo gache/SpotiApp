@@ -4,5 +4,7 @@
     </div>
 </div>
 
+<!-- loading va se montrer quand l'information est en train de se charger -->
+<app-loading *ngIf="loading"></app-loading>
 
-<app-cards [chansons]="artistes"></app-cards>
+<app-cards *ngIf="!loading" [chansons]="artistes"></app-cards>
