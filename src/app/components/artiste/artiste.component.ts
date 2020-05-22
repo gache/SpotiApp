@@ -12,6 +12,7 @@ export class ArtisteComponent implements OnInit {
   // propriete
 artiste: any = {};
 loadingArtist: boolean;
+topTracks: any[] = [];
 
   constructor(private router: ActivatedRoute,
               private spotiService: SpotifyService) {
@@ -19,6 +20,7 @@ loadingArtist: boolean;
     //  j'obtien le parametre avec son id avec je fais subscribe pour obtenir n'importe changement de ce parametre
     this.router.params.subscribe( params => {
     this.getArtistIndi( params['id'] ); // j'appelle ma methode pour avoir l'artiste avec id
+    this.getTopTracks( params['id'] );
     });
   }
 
@@ -32,8 +34,16 @@ loadingArtist: boolean;
         this.artiste = resp;
         this.loadingArtist = false; // loading a chargé l'information
         console.log(resp);
-        
         });
+
+}
+// Methode pour avoir l'artiste individuelle
+getTopTracks( id: string ) {
+  this.spotiService.getTopTracks( id )
+          .subscribe( topTracks => {
+            console.log(topTracks);
+            this.spotiService = topTracks;
+          });
 
 }
 

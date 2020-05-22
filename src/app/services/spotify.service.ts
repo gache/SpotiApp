@@ -47,13 +47,16 @@ export class SpotifyService {
       }));
 
   }
-  // petition get pour avoir l'artiste de mamnière individuelle
+  // petition get pour avoir l'artiste de mamnière individuelle avec son id
   getArtist(id: string) {
     return this.getQuery(`artists/${id}`);
-      // .pipe(map(data => {
-      //   return data['artists'].items; // c'est la route du tableau de l'api de spotify
-        // pour utiliser operator map j'utilise un pipe avec l'operator map pour filtrer l'information qui viens l'Api
-      // }));
+  }
+
+  getTopTracks( id: string ) {
+    return this.getQuery(`artists/${ id }/top-tracks?country=us`)
+                .pipe( map( data => data['tracks']));
 
   }
+
+
 }
