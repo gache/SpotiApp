@@ -16,15 +16,15 @@ export class CardsComponent implements OnInit {
   }
   // avoir l'artiste avec son Id
   voirArtiste(chanson: any) {
-
+// la condition pour avoir l'id de l'Api
     let artisteId;
-    if (chanson.terme === 'artist') {
+    if (chanson.type === 'artist') {
       artisteId = chanson.id;
     } else {
       artisteId = chanson.artists[0].id;
     }
-
-    this.router.navigate(['/artiste', artisteId])
+// navigation vers le composant artiste avec son id
+    this.router.navigate(['/artiste', artisteId]);
     // console.log(artisteId);
 
 

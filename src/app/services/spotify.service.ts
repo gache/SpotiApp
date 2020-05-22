@@ -21,7 +21,7 @@ export class SpotifyService {
     // dans notre cas on ava uitiliser l'headers avec une autentification
     const headers = new HttpHeaders({
       // ici je mets tous les header que l'Api a besoin
-      Authorization: 'Bearer BQAaqeoVoXhjItn94vB4Jfnang1M93ZD9OazKk18V169Icc6YhqUmh6ox_i4T_2DFeoOFQXh9tcDoTaw0Mk'
+      Authorization: 'Bearer BQAfYev9MmCHTLsSs6-dYXhniJTUwNhNudvHsIJ51ec3L695k_EH8h5uW9sNKZidw-mwOPncdkXcPlRmNhM'
     });
     // ja fais fais al petition get j'envoie url et les headers
     return this.http.get(URL, { headers });
@@ -39,12 +39,21 @@ export class SpotifyService {
   }
 
   // petition get pour avoir l'artiste de mamnière individuelle
-  getArtist(terme: string) {
+  getArtists(terme: string) {
     return this.getQuery(`search?q=${terme}&type=artist&limit=15 `)
       .pipe(map(data => {
         return data['artists'].items; // c'est la route du tableau de l'api de spotify
         // pour utiliser operator map j'utilise un pipe avec l'operator map pour filtrer l'information qui viens l'Api
       }));
+
+  }
+  // petition get pour avoir l'artiste de mamnière individuelle
+  getArtist(id: string) {
+    return this.getQuery(`artists/${id}`);
+      // .pipe(map(data => {
+      //   return data['artists'].items; // c'est la route du tableau de l'api de spotify
+        // pour utiliser operator map j'utilise un pipe avec l'operator map pour filtrer l'information qui viens l'Api
+      // }));
 
   }
 }
