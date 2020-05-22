@@ -21,7 +21,7 @@ export class SpotifyService {
     // dans notre cas on ava uitiliser l'headers avec une autentification
     const headers = new HttpHeaders({
       // ici je mets tous les header que l'Api a besoin
-      Authorization: 'Bearer BQAfYev9MmCHTLsSs6-dYXhniJTUwNhNudvHsIJ51ec3L695k_EH8h5uW9sNKZidw-mwOPncdkXcPlRmNhM'
+      Authorization: 'Bearer BQARDHC5_BoxTVeXeNoOj377D3IV-h6Yobenfni5l85kgE5k6DHUGSNAflpA5LPkZyWSQYGNt7wennCSOGw'
     });
     // ja fais fais al petition get j'envoie url et les headers
     return this.http.get(URL, { headers });
@@ -52,9 +52,9 @@ export class SpotifyService {
     return this.getQuery(`artists/${id}`);
   }
 
-  getTopTracks( id: string ) {
-    return this.getQuery(`artists/${ id }/top-tracks?country=us`)
-                .pipe( map( data => data['tracks']));
+  getTopTracks(id: string) {
+    return this.getQuery(`artists/${id}/top-tracks?country=us`)
+      .pipe(map(data => data['tracks']));
 
   }
 
