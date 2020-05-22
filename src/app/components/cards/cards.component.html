@@ -1,9 +1,9 @@
 <div class="card-columns m-5 animated fadeIn">
     <!-- Utilisation et affichage de la data  -->
     <!-- chansons viens de mon input -->
-    <div class="card" *ngFor="let chanson of chansons">
-        <!-- Utilisation du pipes avec et sans images -->
+    <div (click)="voirArtiste( chanson )" class="card puntero" *ngFor="let chanson of chansons">
         <img [src]="chanson.images | nonImage " class="card-img-top" alt="...">
+        <!-- Utilisation du pipes avec et sans images -->
         <div class="card-body">
             <h5 class="card-title"> {{chanson.name}} </h5>
             <p class="card-text">
